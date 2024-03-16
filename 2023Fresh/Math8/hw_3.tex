@@ -1,0 +1,165 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt}
+
+\pagestyle{fancy}
+
+\lhead{} % Left header is empty
+\rhead{Roy Zhou \\ \today \\ Math 8} % Right header contains date and name
+
+\geometry{margin=1in}
+\noindent 
+
+\begin{document}
+\section*{2.3}
+
+\subsection*{Exc. 2}
+$P = $ the function is differentiable. \\
+$Q = $ the function is continuous. \\
+If a function is differentiable, then the function is continuous.
+
+\subsection*{Exc. 8}
+$P = |r| < 1$ \\ 
+$Q = $ a geometric series with ratio r converges \\
+If $ |r| < 1$ then a geometric series with ratio $r$ converges.
+
+\section*{2.4}
+
+\subsection*{Exc. 2}
+$P = $ a function has a constant derivative \\
+$Q = $ a function is linear \\ 
+A function has a constant derivative if and only if it is linear.
+
+\subsection*{Exc. 4}
+$P = $ the occurence becomes an adventure \\ 
+$Q = $ one recounts the occurence \\ 
+An occurence becomes an adventure if and only if one recounts it. 
+
+\section*{2.5}
+
+\subsection*{Exc. 2}
+
+\begin{tabular}{|c|c|c|c|c|}
+    \hline
+	\(Q\) & \(R\) & \(Q \lor R\) & \(R \land Q\) & \((Q \lor R ) \leftrightarrow (R \land Q)\) \\
+    \hline
+	T & T & T & T & T\\
+	T & F & T & F & F\\
+	F & T & T & F & F\\
+	F & F & F & F & T\\
+    \hline
+\end{tabular}
+
+\subsection*{Exc. 4}
+
+\begin{tabular}{|c|c|c|}
+    \hline
+	\(P\) & \(Q\) & \(\neg(P \lor Q) \lor (\neg P) \)\\
+    \hline
+	T & T & F\\
+	T & F & F\\
+	F & T & T\\
+	F & F & T\\
+    \hline
+\end{tabular}
+
+\subsection*{Exc. 6}
+
+\begin{tabular}{|c|c|c|}
+    \hline
+	\(P\) & \(Q\) & \((P \land \neg P) \land Q \)\\
+    \hline
+	T & T & F\\
+	T & F & F\\
+	F & T & F\\
+	F & F & F\\
+    \hline
+\end{tabular}
+
+\subsection*{Exc. 8}
+
+\begin{tabular}{|c|c|c|c|}
+    \hline
+	\(P\) & \(Q\) & \(R\) & \(P \lor (Q \land \neg R)\)\\
+    \hline
+	T & T & T & T\\
+	T & T & F & T\\
+	T & F & T & T\\
+	F & T & T & F\\
+	F & F & T & F\\
+	F & T & F & T\\
+	T & F & F & T\\
+	F & F & F & F\\
+    \hline
+\end{tabular}
+
+\section*{2.6}
+
+\subsection*{Exc. 2}
+
+\begin{tabular}{|c|c|c|c|c|}
+    \hline
+	\(P\) & \(Q\) & \(R\) & \(P \lor (Q \land R)\) & \((P \lor Q) \land (P \lor R)\)\\
+    \hline
+	T & T & T & T & T\\
+	T & T & F & T & T\\
+	T & F & T & T & T\\
+	F & T & T & T & T\\
+	F & F & T & F & F\\
+	F & T & F & F & F\\
+	T & F & F & T & T\\
+	F & F & F & F & F\\
+    \hline
+\end{tabular}
+
+\subsection*{Exc. 6}
+
+\begin{tabular}{|c|c|c|c|c|}
+    \hline
+	\(P\) & \(Q\) & \(R\) & \(\neg(P \land Q \land R)\) & \((\neg P) \lor (\neg Q) \lor (\neg R)\)\\
+    \hline
+	T & T & T & F & F\\
+	T & T & F & T & T\\
+	T & F & T & T & T\\
+	F & T & T & T & T\\
+	F & F & T & T & T\\
+	F & T & F & T & T\\
+	T & F & F & T & T\\
+	F & F & F & T & T\\
+    \hline
+\end{tabular}
+
+\subsection*{Exc. 8}
+
+\begin{tabular}{|c|c|c|c|}
+    \hline
+	\(P\) & \(Q\) & \( \neg P \leftrightarrow Q \) & \( (P \rightarrow \neg Q) \land (\neg Q \rightarrow P) \) \\
+    \hline
+	T & T & F & F \\
+	T & F & T & T \\
+	F & T & T & T \\
+	F & F & F & F \\
+
+    \hline
+\end{tabular}
+
+\subsection*{Exc. 10}
+We simplify the second statement through DeMorgan's law to become: 
+$\neg (P \land \neg Q) \lor R$ further: $(\neg P \lor Q) \lor R$. We realize that they are equivalent, as 
+$(\neg P \lor Q)$ is logically equivalent to $P \rightarrow Q$.
+
+
+\subsection*{Exc. 12}
+The statements are logically equivalent, both are true when P is true and Q is false,
+they are all false otherwise.
+
+\subsection*{Exc. 14}
+The statements are logically equivalent. When P is false both statements are false,
+but when P is true both statements are true. 
+
+\end{document}

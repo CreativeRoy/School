@@ -1,0 +1,62 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt}
+
+\pagestyle{fancy}
+
+\setlength{\headheight}{35pt} 
+\lhead{Game Theory 120 \\ Homework 2} % Left header is empty
+\rhead{Roy Zhou \\ \today} % Right header contains date and name
+
+\geometry{margin=1in} 
+
+\begin{document}
+
+\noindent
+\textbf{Problem 1:}\\
+
+We see that for the default numbers of $n = 1, 3, 4$, $G_n$ is a type N game. On the other hand, 
+for $n = 0, 2$ $G_n$ is a type P game. With that being said, the answer for each number becomes recursive, as it's
+fairly obvious whether a $G_m$ is type N or P given the status of all $G_0, G_1, \cdots, G_(m-1)$. 
+After doing a bit of calculation, it becomes obvious that the set of all type P $G_n$ is $\{0,2,7,9,14,16, \cdots 7k, 7k+2\}$ \\
+
+\noindent
+\textbf{Problem 2:}\\
+
+\textbf{(a) }Assuming we are using the given defenition, where players are playing by 1x1 and 1x2 tiles,
+player 1 will always win. They can jam the middle square with 1, and then use symmetry to copy by 180 degrees around the 
+center block. If we are playing by the formal wikipedia definition in which players are playing with
+2-by-1 dominoes only, we can first make an observation, that the game-state of a
+3-by-3 L is type P. We figure that any move from player 1 allows player 2 to make an L position. 
+This then makes the 3-by-3 game type P. \\
+
+\textbf{(b) } Playing with either the written(probably by mistake?) or formal rules, we know that the game is type P,
+as player 2 can always turn the board 180 degrees and copy player 1's move.\\
+
+Now I'm strictly going to be using the wikipedia definition to save time =).\\
+
+\textbf{(c) } Just using some simple recursion by summing the nimbers, we get: \\
+0: 0\\ 
+1: 0\\
+2: 1\\
+3: 1\\
+4: 2\\
+5: 0\\
+6: 3\\
+7: 1\\
+8: 1\\
+9: 0\\
+10: 3\\
+
+\textbf{(d) } We are able to compute nimbers in the individual systems, 
+but to apply the nimbers in the big picture, we need to follow the concept of balance the same way we did in nim. We see that 
+our first nimber is 1, and our second nimber is 2. Now to win, we need to bring both their nimbers to the same value. We can do this(always and generally) by lowering the nim value of the higher number 
+to be the lower nimber. This is always possible. From then, we can take turns evening out the total, big picture nimber using xor. I assume we can do the same with multiple different systems of CRAM.
+
+\end{document}

@@ -1,0 +1,71 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt}
+
+\pagestyle{fancy}
+
+\setlength{\headheight}{35pt} 
+\lhead{Comb 116 \\ Pigeon Hole Notes} % Left header is empty
+\rhead{Roy Zhou \\ \today} % Right header contains date and name
+
+\geometry{margin=1in}
+
+\begin{document}
+
+\noindent 
+\textbf{Prove:} Given $m$ integers $a_1, a_2, \cdots, a_m$ there exists $k$ and $l$ with 
+$0 \le k < l \le m$ such that $a_{k+1} + a_{k+2} + \cdots + a_l$ is divisble by $m$. \\
+
+We can prove this by simply taking prefix sums of for each index. Call the sums $S_1, S_2, \cdots, S_m$
+if any of these sums are divisible by $m$ the problem is solved. If they aren't that means 
+there must be some $S_i, S_j$ with equal values. This is because of the Pigeon Hole Theorem, we 
+have $m-1$ possible values and $m$ values; this means that there must be some repetition of value. 
+We can then subtract $S_i-S_j$ to get a subsequence of our $m$ integers that are divisible by $m$.\\
+
+\noindent 
+\textbf{Prove:} A chess master who has 11 weeks to prepare for a tournament deciddes to play at least
+one game every day, but to avoid tiring himself, he decides not to play for more than 12 games during a week. 
+There exists a succession of 12 consecutive days where the chess master will have played exactly 21 games.\\
+
+We can try a similar idea with prefix sums. Call the sums $S_1, S_2, S_3, \cdots, S_{77}$ 
+We know that $1 \le S_1 < S_2 < \cdots < S_{77} \le 132$. As well as the fact that 
+$S_{7} \le 12, S_{14} \le 24, \cdots, S_{77} \le 84$. We can also apply this idea to $S_i + 21$.
+Now we have that $22 \le S_1 + 21 < S_2 < \cdots < S_77 + 21 \le 153$. We know that in total, there are 154 elements in between 
+$1$ and $153$. Furthermoore, we know that elements in $S$ and $S + 21$ don't coincide within their own sets. This means
+that an element from $S$ and $S + 21$ must coincide. \\
+
+\noindent 
+\textbf{Prove:} From the integers $1,2,\cdots,200$, we choose $101$ integers. 
+Among the integers chosen, there are two such that one of them is divisible by the other.\\
+
+We simply just look at the odd factors of a number. There are only 100 odd integers in between 
+$1$ and $200$, meaning that there must be at least two numbers with the same odd factor. This means that 
+these numbers are divisible, as WLOG one of them will have a greater factor of 2.\\
+
+\noindent 
+\textbf{Prove:} Chinese Remainder Theorem. Given a relatively prime $m,n$ let $a,b$ be non-negative integers which are less than 
+$m, n$ respectively. Prove there exists a $x$ such that $x = pm + a$ and $x = qn + b$.\\
+
+Consider the numbers $a, m + a, 2m + a, 3m+a, \cdots, (n-1)m + a$. We know that all the numbers 
+have a remainder of $a$ when divided by $m$. We can then find the remainders when divided by $n$. Let's assume 
+that two numbers of $(x)m + a$ and $(y)m + a$ have the same remainder when divided by $n$.
+We can then write these two numbers as $xm + a = q_{i}n + r$ and $ym + a = q_{j}n + r$. 
+We can then do some algebra: 
+$$(x-y)m = n(q_i-q_j)$$
+However, since $m$ and $n$ are relatively prime, that means that $n|x-y$. This doesn't make sense
+as $0 < x-y \le n-1$. This contradiction stems from the idea that there are overlapping remainders in 
+the numbers above. If all numbers are unique, that means there does exist some number with remainder
+$b$ after being divided by $n$.
+
+\noindent
+\textbf{Prove:}
+
+\end{document}
+
+

@@ -1,0 +1,138 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancy}
+\geometry{margin=1in} 
+\setlength{\headheight}{35pt} 
+
+\lhead{Math 8 \\ Homework 6} % Left header is empty
+\rhead{Roy Zhou \\ \today} % Right header contains date and name
+
+\begin{document}
+\noindent
+\textbf{Chapter 10}\\
+
+\noindent
+\textbf{Problem 10}\\
+We first test the base case, where $n = 0$. This works, as $3|0$. Now for the inductive
+step, have  $3|5^{2n}-1$. Now we wish to prove that: 
+\[
+	3|5^{2(n+1)}-1
+.\] 
+First we can represent:
+\begin{align}
+	5^{2(n+1)}-1 = 5^{2n}-1 + (25-1)(5^{2n})
+\end{align}
+ The important thing, is that the difference, is $(25-1)(5^{2n})$ which is a factor
+ of $3$, as $24$ is a factor of $3$. Thus we have proved through induction. \\
+ 
+\noindent
+\textbf{Problem 12}\\
+This clearly doesn't work, as when we check the base case, we get $9|4+8$ or
+$9|12$. Which is clearly false.  \\
+
+\noindent
+\textbf{Problem 22} \\
+Assuming that $0$ is not a natural number, the base case is when $n = 1$.
+We get that: 
+ \[
+	 (1-\frac{1}{2}) \ge \frac{1}{2}
+.\] 
+This is clearly true, thus we move on to the inductive step. Consider the following to be true:
+\[
+	\prod^{n}_{i=1}(1-\frac{1}{2^i}) \ge \frac{1}{4} + \frac{1}{2^{n+1}} 
+\].
+Now for the inductive step, to get 
+\[
+	\prod^{n+1}_{i=1}(1-\frac{1}{2^i}) \ge \frac{1}{4} + \frac{1}{2^{n+2}} 
+\]
+, we multiply the left side by $1-\frac{1}{2^{n+1}}$, while we 
+subtract the right side by $\frac{1}{2^{n+2}}$. Obviously, we can't really compare
+multiplication to subtraction, so we can turn the multiplication to addition by saying:
+\[
+	(1-\frac{1}{2^{n+1}})\prod^{n}_{i=1}(1-\frac{1}{2^i}) =
+	\prod^{n}_{i=1}(1-\frac{1}{2^i}) - \frac{1}{2^{n+1}}\prod^{n}_{i=1}(1-\frac{1}{2^i}) 
+.\]
+Thus is becomes a question of whether $\frac{1}{2^{n+1}}\prod^{n}_{i=1}(1-\frac{1}{2^i})$
+or $\frac{1}{2^{n+2}}$ is greater. Canceling out the $\frac{1}{2^{n+1}}$, the question gets 
+further reduced to $\prod^{n}_{i=1}(1-\frac{1}{2^i})$ vs $\frac{1}{2}$. Obviously $\frac{1}{2}$
+is bigger as $\prod^{n}_{i=1}(1-\frac{1}{2^i})$ is only equal to $\frac{1}{2}$
+when $n = 1$. It gets smaller after every iteration. Thus we know that the left side gets subtracted
+for less after each time. This helps confirm our inductive step, as we know that the left side starts off 
+equal to the right, yet it gets subtracted for less than or equal each time. \\
+
+\noindent
+\textbf{Problem 26}\\
+We do this with induction, consider the base case when $n=1$ we get that:  \[
+F_0F_1 = F_1^2
+.\] 
+This is true, as $F_0, F_1 = 1$, and $1 = 1$ is true. Now for the inductive step, 
+we consider some $n$ such that 
+$$\sum_{k=1}^{n}F^2_k = F_nF_{n+1}$$
+is true. \\
+Now for the inductive step, we're adding $F_{k+1}^2$ to the left side, while multiplying by 
+$\frac{F_{n+2}}{F_n}$ on the right side to get:
+$$\sum_{k=1}^{n+1}F^2_k = F_{n+1}F_{n+2}$$
+Obviously we have to convert the multiplication to addition to compare. We first get:
+$$\frac{F_{n+2}}{F_n} = 1 + \frac{F_{n+1}}{F_n}$$
+Thus we know that we are adding to the right
+\[
+	F_nF_{n+1}\frac{F_{n+1}}{F_n} = F_{n+1}^2
+.\] Thus we have proved the inductive step, as both sides are being added $F^2_{n+1}$
+after every step, thus maintaining their equality.
+
+\noindent
+\textbf{Chapter 11.2}\\
+
+\noindent
+\textbf{Problem 2}\\
+$R$ is not reflexive or symmetric, as $(a,a),(b,a)$ are lacking from set $A$. On the other hand
+$R$ is transitive.
+
+\noindent
+\textbf{Problem 8}\\
+The relation is the equivalence relation, as for $|x-y| < 1$ on the integers, 
+$x$ has to equal $y$. This relation is reflexive, symmetric and transitive. \\
+
+\noindent
+\textbf{Problem 14}\\
+If $R$ is symmetric(also the conditions given in the problem), 
+that must mean there exists some $a,b \in A$ such that:
+ \[
+	 R = \{(a,b), (b,a), \cdots\}
+.\] We also know $R$ is transitive, so we get that: 
+$$(a, b) \land (b,c) \Rightarrow (a,c)$$. 
+Thus with our $(a,b), (b,a)$ we get that $(a,a),(b,b)$ must exist.
+Since there is at least one element that has a relation with every other member
+this means that we get that all elements have a relation with themselves. This 
+is the definition of reflexive.\\
+\noindent
+\textbf{Problem 16}\\
+To prove reflexive property, we have $x^2 \equiv x^2 \pmod{4}$. This is obviously true. 
+To prove the symmetric property, we can take $x^2 \equiv y^2 \pmod_4$. We turn this into
+$x^2 + 4a = y^2 + 4b$. Using the symmetric property of arithmetic, we get $y^2 + 4b=x^2+4a$.
+Then we can reform this into $y^2 \equiv x^2 \pmod4$. Lastly, to prove transitivity, we get 
+\begin{align}
+	x^2 + 4a = y^2 + 4b \\
+	y^2 + 4c = z^2 + 4d
+\end{align}
+Shifting around, we get 
+\begin{align}
+	y^2 = z^2+4(d-c) \\
+	
+	x^2 + 4a = y^2 + 4b \\
+	
+	x^2 + 4a = z^2 + 4(b+d-c) 
+\end{align}
+Which means that:
+\begin{align}
+	x^2 \equiv z^2 \pmod{4}
+\end{align}.
+Thus we have proved transitivity. 
+\end{document}

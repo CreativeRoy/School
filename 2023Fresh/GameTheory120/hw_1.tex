@@ -1,0 +1,55 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt}
+
+\pagestyle{fancy}
+
+\setlength{\headheight}{35pt} 
+\lhead{Game Theory 120 \\ Homework 1} % Left header is empty
+\rhead{Roy Zhou \\ \today} % Right header contains date and name
+
+\geometry{margin=1in} 
+
+\begin{document}
+
+\noindent
+\textbf{Problem 1:}\\
+
+We can do this problem inductively. First consider the case in which $m = 0$ and $n = 1$.
+We get that player 2 wins, as player 1 is forced to eat the only block, which happens to be poisoned. 
+We can then look at the case in which $m = 1$ and $n = 2$. We see that again, player 2 wins, as player 1 can only eat
+one of the blocks on the edges. The player 2 can then eat the only remaining unpoisoned cube. Then the case degenerates to $m = 0$ and $n = 1$.
+We also observe that from any case in which $n = m + 1$, player 2 will always win, as they can manipulate it to
+be a situation where $n = m + 1$ on player 1's turn. Eventually $n,m$ will keep decreasing, until player 1 will have to eat the poisoned cube. 
+On the other hand, for any case in which $n \ne m+1$, player 1 will win, as they can constantly adjust the situation so that player 2 plays 
+on a gamestate where $n = m+1$. For the same reason, player 2 will eventually lose. Thus we have
+concluded that player 1 wins when $n \ne m+1$ and player 2 wins otherwise.\\
+
+\noindent 
+\textbf{Problem 2:}\\
+
+We observe that symmetry plays a big role in this game. In most cases, if one player can mirror the actions of the other,
+the player mimicking will win. We also observe that mirroring does not work if we get into a situation where there are two pins left
+that are adjacent to each other(they have to be adjacent at the center, or else the person mirroring wasn't actually mirroring).
+Because of this, Player 1 will always have a winning strategy, because they can split the center and create two equally sized sections. From
+there, they can just mirror the actions of Player 2. 
+
+\noindent
+\textbf{Problem 3: }\\
+
+(This is assuming we are not playing with the Pie rule, in which player 2 can swap with palyer 1)\\
+We can try a few easier cases, starting off small at $n = 1,2,3$. We get that player 1 wins, simply through the fact that 
+they are able to make it across in $n$ without much trouble. At slightly higher values for $n = 4, 5, 6$ we still get that the first player wins.
+Without many cases, we are very quickly able to land on the (apparently right) assumption that player one is favored to win.
+While an exact reasoning might be a bit far fetched, one easy way to think of it, is that unlike in a game of chess or checkers, a move is never
+non-beneficial. So the first player getting effectively one more move must be beneficial.
+
+\end{document}
+
+

@@ -1,0 +1,212 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancy}
+\geometry{margin=1in}
+\geometry{bottom=1.25in}
+\setlength{\headheight}{35pt} 
+
+\lhead{Comb 116 \\ Homework 5} % Left header is empty
+\rhead{Roy Zhou \\ \today} % Right header contains date and name
+
+\begin{document}
+
+\begin{center}
+	\LARGE	
+	\textbf{Inclusion-Exclusion Principle Problems}
+\end{center}
+
+\noindent
+\textbf{Problem 2:}\\
+
+\noindent
+We call $P_1$ the property of not divisible by $4$. We call $P_2$ the property of being divisible
+by 6, and so on. We have $P_1,P_2,P_3,P_4$, and we are trying to find 
+$\overline{P_1} \cap \overline{P_2} \cap \overline{P_3} \cap \overline{P_4}$.
+To do this, we use the inclusion-exclusion principle, we write:
+\[
+\overline{P_1} \cap \overline{P_2} \cap \overline{P_3} \cap \overline{P_4}
+= 
+|S|-|P_1|-|P_2|-|P_3|-|P_4|+|P_1\cap P_2|+\cdots-|P_2\cap P_3\cap P_4|+|P_1 \cap P_2 \cap P_3 \cap P_4| 
+.\] 
+Now we just need to calculate each of the terms.
+
+\begin{align}
+	\left|P_1\right| = \left\lfloor \frac{10^4}{4}\right\rfloor = 2500\\
+	|P_2| = \left\lfloor \frac{10^4}{6}\right\rfloor = 1666\\
+	|P_3| = \left\lfloor \frac{10^4}{7}\right\rfloor = 1428\\
+	|P_4| = \left\lfloor \frac{10^4}{10}\right\rfloor = 1000\\
+	|P_1\cap P_2| = \left\lfloor \frac{10^4}{24} \right\rfloor = 416\\	
+	|P_1\cap P_3| = \left\lfloor \frac{10^4}{28} \right\rfloor = 357\\
+	|P_1\cap P_4| = \left\lfloor \frac{10^4}{40} \right\rfloor = 250 \\
+	|P_2\cap P_3| = \left\lfloor \frac{10^4}{42} \right\rfloor = 238 \\
+	|P_2\cap P_4| = \left\lfloor \frac{10^4}{60} \right\rfloor = 166 \\
+	|P_3\cap P_4| = \left\lfloor \frac{10^4}{70} \right\rfloor = 142 \\
+	|P_1\cap P_2\cap P_3| = \left\lfloor \frac{10^4}{168} \right\rfloor = 59 \\
+	|P_1\cap P_2 \cap P_4| = \left\lfloor \frac{10^4}{240} \right\rfloor = 41 \\
+	|P_1\cap P_3 \cap P_4| = \left\lfloor \frac{10^4}{280} \right\rfloor = 35 \\
+	|P_2\cap P_3 \cap P_4| = \left\lfloor \frac{10^4}{420} \right\rfloor = 23 \\
+	|P_1 \cap P_2 \cap P_3 \cap P_4| = \left\lfloor \frac{10^4}{1680} \right\rfloor = 5
+\end{align}
+Now we can just plug this into our equation, we get:
+\[
+\overline{P_1} \cap \overline{P_2} \cap \overline{P_3} \cap \overline{P_4} = 
+\]
+\[
+10^{4}-(2500+1666+1428+1000)+(416+357+250+238+166+142)-(59+41+35+23)+5 = 4822
+\].\\
+
+\noindent
+\textbf{Problem 5:}\\
+
+\noindent
+We can use a similar strategy, call $B, C, D$ the properties of having more than 4 $b$'s, 5 $c$'s, and 7 $d$'s, 
+respectively. Now we have the equation:
+\[
+	|\overline{B} \cap \overline{C} \cap \overline{D}| = 
+	|S| - (|B|+|C|+|D|) + (|B \cap C| + |B \cap D| + |C \cap D|) - (|B \cap C \cap D|)
+.\] 
+Again, we calculate the terms.
+
+\begin{align}
+	|S| = \binom{10+4-1}{3} = \binom{13}{3}\\
+	|B| = \binom{10-5+4-1}{3} = \binom{8}{3}\\
+	|C| = \binom{10-6+4-1}{3} = \binom{7}{3}\\
+	|D| = \binom{10-8+4-1}{3} = \binom{5}{3}\\
+	|B \cap C| = 0\\
+	|B \cap D| = 0\\
+	|C \cap D| = 0\\
+	|B \cap C \cap D| = 0
+\end{align}
+We get:
+\[
+	|\overline{B} \cap \overline{C} \cap \overline{D}| = 
+	\binom{13}{3}-(\binom{8}{3}+\binom{7}{3}+\binom{5}{3}) = 185	  
+.\]\\
+
+\noindent
+\textbf{Problem 6:}\\
+
+\noindent
+We do the same thing as problems 2 and 5. Call $A,B,C$ the properties of having more than 
+6 chocolate, 6 cinnamon, and 3 plain, respectively. We get the equation:
+ \[
+	|\overline{A} \cap \overline{B} \cap \overline{C}| = 
+	|S| - (|A|+|B|+|C|) + (|A \cap B| + |A \cap C| + |B \cap C|) - (|A \cap B \cap C|)
+ .\] 
+
+\begin{align}
+	|S| = \binom{12+3-1}{2} = \binom{14}{2}\\
+	|A| = \binom{12-7+3-1}{2} = \binom{7}{2}\\
+	|B| = \binom{12-7+3-1}{2} = \binom{7}{2}\\
+	|C| = \binom{12-4+3-1}{2} = \binom{10}{2}\\
+	|A \cap B| = 0 \\
+	|A \cap C| = \binom{12-7-4+3-1}{2} = \binom{3}{2} = 3\\
+	|A \cap B| = \binom{12-7-4+3-1}{2} = \binom{3}{2} = 3\\
+ 	|A \cap B \cap C| = 0
+\end{align}
+After plugging in the terms, we get:
+\[
+|\overline{A} \cap \overline{B} \cap \overline{C}| = 
+\binom{14}{2} - (\binom{7}{2} + \binom{7}{2} + \binom{10}{2}) + (3 + 3) = 10
+.\]\\
+ 
+\noindent
+\textbf{Problem 8}\\
+
+\noindent
+We just use the same idea, as the first few problems. We can call $A_i$ the situation when $x_i$ is greater
+than 5. We get
+
+\begin{align}
+	|S| = \binom{14-5+5-1}{4} = \binom{13}{4} \\
+	|A_i| = \binom{14-6-5+5-1}{4} = \binom{8}{4}\\
+	|A_i \cap A_j| = 0 \\
+	\cdots = 0
+\end{align}
+
+Then to put it together, we just write:
+\[
+	|\overline{A_1} \cap \overline{A_2} \cap\overline{A_3} \cap\overline{A_4} \cap \overline{A_5}| = 
+	\binom{13}{4} - 5\binom{8}{4} = 365
+.\] 
+
+\noindent
+\textbf{Problem 15(a):}\\
+
+\noindent
+In the case that no gentleman recieves his own hat, we just directly reference the seventh dearrangement
+number, or in notation, $D_7$. We also use the formula, to get that
+\[
+D_7 = 
+7!(1 - \frac{1}{1} + \frac{1}{2!} - \frac{1}{3!} + \frac{1}{4!} - 
+\frac{1}{5!} + \frac{1}{6!} - \frac{1}{7!}) = 1854
+.\] \\
+
+\noindent
+\textbf{Problem 15(b):}\\
+
+\noindent
+In the case where at least one gentleman gets his hat, we just do
+\[
+7! - D_7 = 5040-1854 = 3186
+.\] \\
+
+\noindent
+\textbf{Problem 15(c):}\\
+
+\noindent
+In the case where at least two of the gentleman recieve their own hat, we just get
+our previous number, $7!-D_7$, and subtract the scenario in which only one gentleman
+recieves his own hat, or $7(D_6)$. We get:
+\[
+7!-D_7-7D_6 = 2921
+.\]\\
+ 
+\noindent
+\textbf{Problem 21:}\\
+
+\noindent
+To prove the if and only if part, we must prove that $D_n$ is an even number if $n$ is odd,
+then we can either prove that if $D_n$ is even $n$ is odd, or we can just prove that $D_n$ 
+is odd when $n$ is even. If we do the latter, we have proved the if and only if, as $n$ can
+only be either even or odd. If $D_n$ were to be even we know it has to be becase $n$ is odd.
+For the first part, we write down the definition of $D_n$ :
+\[
+D_n = n!(1 - \frac{1}{1!} + \frac{1}{2!} - \cdots + (-1)^{n}\frac{1}{n!})
+\] 
+\[
+	= n! - n! + \frac{n!}{2!} - \frac{n!}{3!} - \cdots + (-1)^{n}\frac{n!}{n!} 
+.\] 
+Using this abridged form, we are able to draw a few conclusions, because $n-1$ is even, we
+know that:
+ \[
+	 D_n \equiv \frac{n!}{(n-1)!} - \frac{n!}{n!} \pmod{2}
+ \]
+  \[
+	  D_n \equiv n! - n! \equiv 0 \pmod{2}
+ .\]
+As shown, because $n-1$ is even, we are able to reduce the question down to the terms above.
+From the terms above, we get two odds, which implies that their sum is even. Thus we have proven
+that if $n$ is odd, that $D_n$ will be even.  \\
+
+\noindent
+For the other way, we prove the contrapositive. If $n$ is even, prove that $D_n$ is odd.
+This problem works much simpler than the previous one, the same way in which we were able to
+cancel out(mod 2) the terms until $\frac{n!}{(n-1)!}$, we can cancel out the terms until
+\[
+	D_m \equiv \frac{n!}{n!} \pmod{2}
+.\] 
+Because $\frac{n!}{n!} = 1$, we get tha t
+ \[
+	 D_m \equiv 1 \pmod{2}
+.\] 
+Thus we have proved that if $n$ is even, $D_m$ is odd. This directly implies that if $D_m$ is even,
+$n$ is odd. Thus we have proved both ways, completing the if-and-only-if proof.
+\end{document}

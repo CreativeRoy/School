@@ -1,0 +1,96 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancy}
+\geometry{margin=1in} 
+\setlength{\headheight}{35pt} 
+
+\lhead{Math 8 \\ Homework 7} % Left header is empty
+\rhead{Roy Zhou \\ \today} % Right header contains date and name
+
+\begin{document}
+\noindent
+\textbf{Problem 2: }\\
+\[
+	R = \{(a,a), (b,b), (c,c) (d,d) (e,e), 
+	(a,d), (d,a), (a,e), (e,a), (d,e), (e,d), 
+	(b,c), (c,b)\}
+.\]\\
+
+\noindent
+\textbf{Problem 8: }\\
+To prove $R$ is an equivalence relation, we need to prove Symmetry, Reflexivity,
+and Transitivity.\\
+For Symmetry we can assume xRy, or  $x^2 + y^2 = 2m$ where $m \in \mathbb{Z}$. 
+Now we need to prove that  $y^2 + x^2$ is even. To do this, we just use the
+commutative property of addition to write $y^2 + x^2 = 2m$. Since $2m$ is even,
+we get that yRx is true. \\
+For Reflexivity, we know that $R$ is on $\mathbb{Z}$, so that means
+$\forall n \in \mathbb{Z}$, we need to prove that zRz, and by def. $z^2+z^2$, is even.
+This is actually very easy, as we just get that:
+\[
+z^2+z^2 = 2z^2
+.\] 
+and since $z^2 \in \mathbb{Z}$, $2z^2$ must be even, thus proving reflexivity.\\
+Lastly, for transitivity, we assume xRy and yRz are in the relation $R$. Now 
+we just have to prove that $x^2 + z^2$ is even. By def. we get(for $m,n \in \mathbb{Z}$):
+\begin{align}
+	x^2+y^2=2m
+	y^2+z^2=2n
+	x^2+z^2+2y^2=2(m+n)
+	x^2+z^2 = 2(m+n-y^2)
+\end{align}
+Since $(m+n-y^2)$ is an integer, we get that $2(m+n-y^2s)$ is an even integer,
+and thus xRz must be in the relation. \\
+For the equivalence classes, we can just take $[0]$ as an initial class, now from
+there we can work to see which numbers are in the same class as  $[0]$. 
+We write(for some $m \in \mathbb{Z}$):
+ \[
+0 + y^2 = 2m
+.\] 
+We get that $y$ must be an even integer. Thus all even integers are in the same
+class as  $[0]$. Now we move on to the next available number, and create a class off
+that. We get $[1]$. Now we can do the same to get:
+ \[
+1+y^2 = 2m
+.\] 
+Obviously, only an odd number added to an odd would yield an even. Thus we get that 
+$y^2$ has to be odd. Then we get that all odd numbers are in the same equiv. class as 
+$[1]$. Thus all the numbers $z \in \mathbb{Z}$ have either been put in the class $[0]$
+or $[1]$. So the two equiv classes are all evens, or all odds.
+
+\noindent
+\textbf{Problem 10: }\\
+We need to prove Symmetry, Reflexivity, and Transitivity. \\
+For Symmetry, we can assume that $(x,y) \in R \cap S$, from definition of intersection,
+we get that $(x,y) \in R, S$. From the fact that $R,S$ are both Symmetric themselves, 
+we get that $(y,x) \in R, S$. Thus by def of intersection $(y,x) \in r \cap s$. So the
+existence of  $(x,y) \in R \cap S$ implies $(y,x) \in r \cap s$, and thus we have 
+proven Symmetry. \\
+For Reflexivity to be true, we need that $(x,x) \in R \cap S$ for some $x \in A$. 
+Since $R, S$ are both reflexive, and on $A$ themselves, we know 
+that $(x,x) \in R, S$. Thus by definition of intersection we get that 
+$(x,x) \in R \cap S$. Thus proving Reflexivity. \\
+Lastly, for Transitivity, we assume that $(x,y), (y,z) \in R \cap S$. We need to prove
+$(x,z) \in R \cap S$. To prove, again use definition of intersection to get that 
+$(x,y), (y,z) \in R, S$. Since $R,S$ are transitive themselves, we get that 
+$(x,z) \in R,S$. Again, by definition of intersection we get that $(x,z) \in R \cap S$.
+Thus we have proven transitivity. \\
+
+\noindent
+\textbf{Problem 12: }\\
+Disproof: lets say we have:
+ \begin{align}
+	 R = \{(a,a),(b,b),(c,c),(a,b),(b,a)\} \\
+	 S = \{(a,a),(b,b),(c,c),(c,b),(b,c)\} \\
+	 R \cup S = {(a,a),(b,b),(c,c),(a,b),(b,a),(b,c),(c,b)}
+\end{align}
+This breaks the transitive property, as $(a,b)$ and $(b,c)$ implies the existence of 
+$(a,c)$, but  $R\cup S$ doesn't have $(a,c)$.
+\end{document}

@@ -1,0 +1,130 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt}
+
+\pagestyle{fancy}
+
+\lhead{Game Theory \\ Homework 4} % Left header is empty
+\rhead{Roy Zhou \\ \today} % Right header contains date and name
+
+\geometry{margin=1in}
+\noindent 
+
+\begin{document}
+
+
+\noindent 
+\textbf{Problem 1:} \\
+For the following matrix to have a saddle point, we would need $x<3$,
+as this would mean that $x$ would be the biggest in the row and smallest in the column.
+\[
+\begin{bmatrix}
+3 & 6 \\
+x & 0 \\
+\end{bmatrix}
+\]
+
+\noindent
+\textbf{Problem 2a: }\\
+
+Think of the game from Colin's perspective, the matrix becomes: 
+\[
+\begin{bmatrix}
+3 & 1 & -2 & -3 \\
+-5 & -3 & 2 & 6 \\
+\end{bmatrix}
+\]
+Let's say Colin has probability $p$ of picking row 1, and $1-p$ of picking row 2.
+We get:
+ \[
+\begin{bmatrix}
+	p & 1-p 	
+\end{bmatrix}
+.\] 
+Multiplying the two matrices, we get:
+\[
+\begin{bmatrix}
+	8p-5 & 4p-3 & -4p+2 & -9p+6
+\end{bmatrix}
+.\] 
+
+Plugging into a graphing calculator, we get that the minimax is at $p = 0.625$, and the 
+value of the game is -0.5(from colins perspective). This means that colin should be choosing row 1 
+$\frac{0.625}{1}$ percent of the time. This also means that in the totality of the game, Rose will be up
+$0.5$ dollars. Solving for Rose, we also get that rose should choose the middle two in half-half way.
+
+\\
+
+\noindent 
+\textbf{Problem 2b :} \\
+\[
+\begin{bmatrix}
+-4 & 2 & 0 & 3 & -2 \\
+4 & 1 & 0 & -3 & 1\\
+\end{bmatrix}
+\]
+Lets say Rose has probability $p$ of picking row 1, and $1-p$ of picking row 2. We could write:
+ \[
+\begin{bmatrix}
+	p & 1-p 	
+\end{bmatrix}
+.\] 
+Multiplying Rose's matrix with the game matrix we get: 
+\[
+\begin{bmatrix}
+	
+\end{bmatrix}
+.\] 
+Thus we can plug these into a graphing calculator, and find the maximum of the minimum points. 
+We find the maximin occurs at one locations, at $x = 0.444$. The expected outcome 
+at the locations is $-\frac{1}{3}$. Thus we get that if the game were to last for many rounds, Colin would make 
+$\frac{1}{3}$ of a dollar. Rose's most optimal strategy is for $p = 0.444$. Solving for Colin, we get that 
+he should choose the last two columns at odds of $\frac{1}{3}$ and $\frac{2}{3}$. 
+
+\noindent
+\textbf{Problem 3: } \\
+
+Lets say Colin plays 
+ \[
+\begin{bmatrix}
+	p_1 \\
+	p_2 \\ 
+	1- p_1 - p_2
+\end{bmatrix}
+.\] 
+We get that the game is 
+\[
+\begin{bmatrix}
+	p_2(a+b)+p_1b-b \\
+	-p_1(a+c)-p_2c+c
+	p_1b-p_2c
+\end{bmatrix}
+.\] 
+Since we know that there are saddle points at solution sets, we set rows equal to each other to solve:
+Setting row 1 to row 3:
+$$p_2(a+b)+p_1b-b = p_1b-p_2c$$
+$$p_2 = \frac{b}{a}+b+c$$
+Setting row 2 to row 3:
+$$p_1(a+c)-p_2+c=p_1b-p_2c$$
+$$p_1 = \frac{c}{a+b+c}$$
+We get that: 
+$$1-p_1-p_2 = \frac{a}{a+b+c}$$
+
+We plug these values in, and we multiply by the game to get: 
+\[
+\begin{bmatrix}
+	0 \\
+	0 \\
+	0
+\end{bmatrix}
+.\] 
+Thus we get that the value of the game is 0.
+
+\end{document}
+
+
