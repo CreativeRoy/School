@@ -5,8 +5,9 @@
 #define HAND_H
 
 class Hand {
-	Card* card_list;
-
+	Card* card_list;	
+	size_t num;
+	size_t capacity;
 	public:
 		Hand();
 		
@@ -24,10 +25,11 @@ class Hand {
 	
 		void print() const;
 
-		Hand* make_hand();
-
-		Hand* best_hand(const Hand& cards);
 };
+
+Hand* make_hand();
+
+Hand* best_hand(const Hand& cards);
 
 #endif
 

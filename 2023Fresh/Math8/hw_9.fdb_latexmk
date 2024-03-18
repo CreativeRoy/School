@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1710376953 "hw_9.tex" "hw_9.pdf" "hw_9" 1710376953 0
+["pdflatex"] 1710699334 "hw_9.tex" "hw_9.pdf" "hw_9" 1710699335 0
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1704400182 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1704400182 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1704400182 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -50,8 +50,8 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1704400182 40684 9b9ec0b4288972636ff6a3b9c4238efc ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1710134886 29871 18e04762487e39c9af1b8df78fcf191a ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1710134881 6768044 2dd0d3a6822fb681a7f69adea28666f1 ""
-  "hw_9.aux" 1710376953 32 ab05033ccbb38b00a31b200ccedf8001 "pdflatex"
-  "hw_9.tex" 1710376952 5075 a7eba87a560489ac2d03b5a570171646 ""
+  "hw_9.aux" 1710699335 32 ab05033ccbb38b00a31b200ccedf8001 "pdflatex"
+  "hw_9.tex" 1710699333 5096 f25ea24e24cca63de52c511a082c8d54 ""
   (generated)
   "hw_9.aux"
   "hw_9.log"
