@@ -1,0 +1,98 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancy}
+\geometry{margin=1in} 
+\setlength{\headheight}{35pt} 
+
+\lhead{Game Theory \\ Homework 6} % Left header is empty
+\rhead{Roy Zhou \\ \today} % Right header contains date and name
+
+\begin{document}
+\noindent
+\textbf{Problem 1(a): }\\
+We can model the Pareto optimal set, $P$, as $x+y=k$, where $k$ is the y-intercept of the $P$, and 
+the SQ is at the origin. Now our goal is to maximize the value of $N$, where  $N = (x-x_0)(y-y_0) = xy$. 
+We can use a bit of calculus to do this, first substitution $y$ to get
+\[
+N = x(k-x) = -x^2+kx
+.\] 
+From there we can take the derivative of $N$, then find the value of $x$ when $N' = 0$.
+\begin{align*}
+	N' = -2x+k \\
+	0 = -2x+k \\
+	x = \frac{k}{2}		
+\end{align*}
+Now since we know that $N$ is greatest(we don't really care about endpoints in the scope of this problem)
+when $x = \frac{k}{2}$, $y = \frac{k}{2}$. So we get that line with slope 
+$\frac{\frac{k}{2}-0}{\frac{k}{2}-0} = 1$ is the line that produces the solution of the Nash arbitration scheme. \\
+
+\noindent
+\textbf{Problem 1(b): }\\
+If $-1$ is replaced by $-m$ we can use the same approach just with modifying the equation a bit. We write
+$mx+y=k$, and we run the same operation, getting $N = xy = x(k-mx)$. We then get
+\begin{align*}
+	N = xk-mx^2 \\
+	N' = k-2mx \\
+	0 = k-2mx \\
+	x = \frac{k}{2m}
+\end{align*}
+Now we find that when $x = \frac{k}{2m}$, $y = \frac{k}{2}$. So we get that the slope is 
+$\frac{\frac{k}{2}}{\frac{k}{2m}} = m$. Thus the line that produces the solution to the Nash arbitration scheme 
+is just $m$. \\
+
+\noindent
+\textbf{Problem 1(c): } \\
+Graphing this problem out, we get that the Pareto optimal set is just the segment from $(3,7)$ to $(6,1)$.
+Thus we can simply apply what we learned from the second problem, which is that for a given Pareto optimal set,
+a line from SQ with the negative slope of that of the $P$ set will produce the intersection/solution for the 
+Nash arbitration scheme. We get that the slope of the Pareto optimal set is
+\[
+m = \frac{7-1}{3-6} = -2
+.\] 
+Thus we get that the slope from our SQ, or $(3, 1)$ is $2$. So we write the equation $y = 2x-5$. This line
+has an intersection with the Pareto optimal set at, $(\frac{9}{2}, 4)$, thus we know the solution is 
+$(\frac{9}{2}, 4)$. \\
+
+\noindent
+\textbf{Problem 2: } \\
+For this problem I first shifted everything such that the SQ was at the origin, then I 
+graphed it on desmos (I still haven't figured out a good way to draw on vimtex yet)\\ 
+https://www.desmos.com/calculator/njw7y4mkb3 \\
+From the graph, we are able to see that our strategy from Problem 1 doesn't work anymore, 
+as none of the segments of our Pareto Optimal set have intersections. This is ok, however, becuase as in calculus, 
+if there isn't a region where the derivative is equal to zero, we can simply check all of the endpoints. 
+So we do that, and we find that the point $(16,17)$ results in $272$, the greatest value, which makes $(16,17)$ the solution to the Nash arbitration
+scheme.  \\
+
+\noindent
+\textbf{Problem 3: } \\
+We first calculate that:
+\begin{align*}
+	S^{+}V^{+}B^{+} = (9, -9,)\\
+	S^{+}V^{+}B^{-} = (7,-8)\\
+	S^{+}V^{-}B^{+} = (6, -7)\\
+	S^{+}V^{-}B^{-} = (4,-6)\\
+	S^{-}V^{+}B^{+} = (1, 3)\\
+	S^{-}V^{+}B^{-} = (-1, 4)\\
+	S^{-}V^{-}B^{+} = (-2, 5)\\
+	S^{-}V^{-}B^{-} = (-4, 6)\\
+\end{align*}
+Again, I graphed this on desmos: \\
+https://www.desmos.com/calculator/1bupc8oym8 \\
+We have two possible solutions, one at the intersection of the slope, using our method from problem 1, 
+$(\frac{3}{2}, \frac{9}{4})$, and another at the endpoint $(1,3)$ now to check which one is the most optimal,
+we simply multiply the x and y, and compare which value is bigger. We get that $(\frac{3}{2}, \frac{9}{4})$ is
+the most optimal, as its value is $\frac{27}{8}$, which is larger than the value of $3$. Now because our solution
+is between $S^{-}V^{+}B^{+}$ and $S^{+}V^{+}B^{+}$, we get that the vacation bonus and signing bonus are garunteed,
+we just need to calculate the salary. We get
+\[
+75000+3200(\frac{\frac{3}{2}-1}{9-1}) = 75000+3200\frac{1}{16}=75000+200=75200
+.\] 
+\end{document}	

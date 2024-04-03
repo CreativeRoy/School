@@ -1,0 +1,155 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancy}
+\geometry{margin=1in} 
+\setlength{\headheight}{35pt} 
+
+\lhead{Math 8 \\ Homework 9} % Left header is empty
+\rhead{Roy Zhou \\ \today} % Right header contains date and name
+
+\begin{document}
+
+\begin{center} 
+\Large
+Functions Homework  
+\end{center}
+
+\noindent
+\textbf{Problem 4}\\
+
+\noindent
+Everything that goes through $f$ gets mapped to $c$, thus we get
+ $$g \circ f = a$$ 
+ $$f \circ g = c$$ \\
+ 
+\noindent
+\textbf{Problem 6}\\
+
+\noindent
+We first calculate $g \circ f$. We do this by plugging in the result of $f$ into $g$.
+\begin{align*}
+	g \circ f = 3(\frac{1}{x^2+1})+2
+	= \frac{3}{x^2+1}+2
+\end{align*}
+To calculate $f \circ g$, we do the opposite, plugging the result of $g$ into $f$.
+\begin{align*}
+	f \circ g = \frac{1}{(3x+2)^2 + 1}
+	= \frac{1}{9x^2+12x+5}
+\end{align*}
+
+\noindent
+\textbf{Problem 8}\\
+
+\noindent
+We do essentially the same thing, just pluggin in the results of $f$ to $g$ and vice
+versa.
+\begin{align*}
+g \circ f = \{5(3m-4n) + 2m+n, 3m-4n\}\\
+= \{15m-20n + 2m+n, 3m-4n\}\\
+= \{17m - 19n, 3m-4n\}\\
+f \circ g = \{3(5m+n)-4m, 2(5m+n) + m\}\\
+= \{11m + 3n, 11m + 2n\}
+\end{align*}\\
+
+\noindent
+\textbf{Problem 4}\\
+
+\noindent
+For sake of visual clarity, we can find the inverse by substituting $x$ for $y$ and $f(x)$
+for $x$.
+$$x = e^{y^3 + 1}$$ 
+$$\ln x = y^3 + 1$$ 
+$$y = (\ln x - 1)^{\frac{1}{3}} $$
+We get that the inverse is: 
+\[
+	f^{-1}(x) = (\ln x - 1)^{\frac{1}{3}}
+.\] 
+
+\noindent
+\textbf{Problem 8} \\
+
+\noindent
+The function is bijective, because for every result, there is always an $X$ to get it, and if
+two results are the same, that must mean that the initial sets are the same. Furthermore 
+$\theta^{-1} = \theta$ as in that $\theta^{-1}(X) = \overline{X}$. \\
+
+\noindent
+\textbf{Problem 2} \\
+
+\noindent
+The images are:
+\begin{align*}
+	f(\{1,2,3\}) = \{3,8\} \\
+	f(\{4,5,6,7\}) = \{1,2,4,6\} \\
+	f(\emptyset) = \emptyset \\
+	f^{-1}(\{0,5,9\}) = \emptyset \\
+	f^{-1}(\{0,3,5,9\}) = \{1,3\} 
+\end{align*}\\
+
+\noindent
+\textbf{Problem 8}\\
+
+\noindent
+One such counterexample would be the function $f(x) = x$.\\
+ 
+\noindent
+\textbf{Problem 10}\\
+
+\noindent
+To prove this, we have to split the problem into two parts:
+$$f^{-1}(Y \cap Z) \subseteq f^{-1}(Y)\cap f^{-1}(Z)$$
+$$f^{-1}(Y)\cap f^{-1}(Z) \subseteq f^{-1}(Y \cap Z)$$
+To do the first part, we split the problem into four cases. 
+\begin{align}
+	x \in Y, x \notin Z\\
+	x \notin Y, x \in Z\\
+	x \in Y, x \in Z\\
+	x \notin Y, x \notin Z
+\end{align}
+In the first and second and fourth case, we get that $x \notin Y \cap Z$, and thus we're done.\\
+In the third case, we get that $x \in Y \cap Z$, thus $f^{-1}(x)$ is on the left side,
+however, we also get that $f^{-1}(x)$ is in $f^{-1}(Y) \cap f^{-1}(Z)$, so we're good, 
+as $f^{-1}(x)$ belongs in both sides. \\
+For the second part, we again use the split cases. \\
+In the first, second, and fourth case, we get that $f^{-1}(x) \not\in f^{-1}(Y) \cap f^{-1}(Z)$, 
+and we're done\\
+In the third case, we get that $f^{-1}(x) \in f^{-1}(Y) \cap f^{-1}(Z)$, but we also get that 
+$f^{-1}(x) \in f^{-1}(Y \cap Z)$. We're fine, as$f^{-1}(x)$ belongs on both sides. \\
+Thus we're done, as we've proved both sides. \\
+
+\noindent
+\textbf{Problem 12}\\
+
+\noindent
+If $f$ is not injective, then $X \neq f^{-1}(f(X))$ for all $X \subseteq A$. This is because,
+if $f$ is not injective, that must mean there are some $a, b \in A$ such that $f(a) = f(b)$. 
+Here we can choose $X = \{a\}$. This means that $f^{-1} = \{a, b, \cdots \}$, which is not equal 
+to the original $X$. On the other hand, if $f$ is injective, we get that for 
+every $x \in X$, $f(x)$ is unique. This is important because this means that $f^{-1}(f(x))$ 
+will result in $x$. Thus we get that $X = f^{-1}(f(X))$. 
+Thus we proved the if and only if, as if $f$ is not injective, it results in $X = f^{-1}(f(X))$ 
+being false, while if $f$ is injective, it results in $X = f^{-1}(f(X))$ being true.\\
+For the second problem we do it the same way. If $f$ is not surjective, this means that for some
+$y \in Y$, $f^{-1}(y)$ does not exist. This means that we can have $Y = \{y\}$, and then 
+$f(f^{-1}(Y)) = \emptyset$, which is not equal to $Y$. Then to prove the other way, we look at
+if $f$ is surjective, that would mean that for every $y \in Y$, $f^{-1}(y)$ exists, which means that
+$f(f^{-1}(y)) = y$. Thus we have proved both ways.\\
+
+\noindent
+\textbf{Problem 14}\\
+
+\noindent
+The statement is true, consider $x \in Y$, we can have $X$ be the set of all points such that for 
+$\forall a \in X$, $f(a) = x$. In other words, $X$ is pre-image of just a singular point $x \in Y$.
+Now we have to prove equivalence. For the left side, we get that $X \in f^{-1}(Y)$, we then get
+that $f(X) = x$, then finally we get that $f^{-1}(x) = X$. Thus we get $X$ on the left side, for 
+the right side, we also get $X$, thus we're done. 
+
+\end{document}

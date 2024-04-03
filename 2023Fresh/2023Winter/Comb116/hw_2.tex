@@ -1,0 +1,74 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt}
+
+\pagestyle{fancy}
+
+\setlength{\headheight}{35pt} 
+\lhead{Comb 116 \\ Homework 2} % Left header is empty
+\rhead{Roy Zhou \\ \today} % Right header contains date and name
+
+\geometry{margin=1in}
+
+\begin{document}
+
+\noindent
+\textbf{Problem 8}\\
+We can approach this problem by analyzing the division algorithm. We can quickly calculate the 
+integer portion of the decimal expansion through the equation $m = p_{0}n + r_{0}$. Here, $p_0$
+is our integer portion of the decimal expansion. We are left to work with $r_0$, which is 
+$0 \le r_0 \le n-1$. From here, we can calculate each decimal digit by finding $p_i$ where $i > 0$.
+	We are able to do this, as because $r$ is less than $n-1$, we know that $p$ must be a single digit.
+$$10r_{0} = p_{1}n + r_{1}$$
+$$10r_1 = p_{2}n + r_{2}$$
+$$10r_2 = p_{3}n + r_3$$
+$$\cdots$$
+$$10r_9 = p_{10}n + r_{10}$$
+$$10r_{10} = p_{11}n + r_{11}$$
+We know that there are only $10$ possible integer values for $r_i$, that is the single digits of
+$0, 1, 2, \cdots, 9$. Because $i$ goes to infinite(or in this example 11), that means that there are some $r_i, r_j$
+which are bound to be the same. This means that the resulting $r_i+1 = r_j+1$, and thus we have an inductive pattern, as
+every $r_i$ leads to exactly one $r_{i+1}$.
+
+\noindent 
+\textbf{Problem 12} \\
+The Chinese Remainder Theorem states the existence of some $x$ that satisfies the following conditions:
+$$x \equiv a_1 \pmod{b_1}$$
+$$x \equiv a_2 \pmod{b_2}$$
+Where $b_1$ and $b_2$ are coprime. However, there are instances where the Chinese Remainder Theorem works despite $b_1$
+and $b_2$ being non-coprime. This is when $a_1 - a_2|\gcd{(b_1, b_2)}$. We don't need to prove this, and only need
+to show that it is possible, by example. Given the conditions where:
+$$x \equiv 2 \pmod{4}$$
+$$x \equiv 4 \pmod{6}$$
+There are many solutions, but the smallest one is when $x = 10$. Thus we have shown that it is possible
+for the Chinese Remainder Theorem to work, despite not being coprime.
+
+\noindent
+\textbf{Problem 26}\\
+Consider a person, $P$, in row $j$ at column $k$ of the sorted list. In the original, only row-sorted list, 
+we know that there is one person to the left of $P$ who is shorter. Further, we know that $P$ is taller than all the people in front
+in his own column. Those respective people in the same column are also taller than at least $1$ person in row $k-1$. Thus we know that there
+are exactly $j$ people who are shorter than $P$, however, since $P$ is on the $jth$ row, that means that his counterpart in row $k-1$ will be 
+shorter.
+
+\noindent
+\textbf{Problem 29}\\
+We can look at this problem through a purely pigeon-hole based standpoint. Consider what happens when we have $n+1$ objects.
+This means that each $B^*_1, B^*_2, \cdots, B^*_{n+1}$ must have exactly 1 object inside of them. We clearly see that the statement is true,
+as due to the pigeon hole theorem, there must be a hole with at least two objects inside of it. We can then use these two(or more) objects
+as proof that we can indeed find two object which are contained in a new box that has fewer objects than the old box that contained them. 
+We can then further our argument by adding one object at a time. We can use an algorithm
+which takes all objects in the current greatest $B$ and transfers them into the objects in the greatest $B^*$.
+Assuming the greatest $B$ is not immediately greater than $B^*$, we get that our
+statement is true, when the current greatest $B$ is greater than the current
+greatest $B^*$. Now essentially we realize that the least $B^*$ must be greater than the least $B$, something not possible since
+it would take $n+1$ new objects to increase the least $B^*$ by $1$. Meanwhile, this would result in a max $B$ with at least 1 greater than before.
+Because we can never have that happen, there is always going to be 1 with greater $B$.
+
+\end{document}

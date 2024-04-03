@@ -1,0 +1,119 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt}
+
+\pagestyle{fancy}
+
+\setlength{\headheight}{35pt} 
+\lhead{Math 8 \\ Homework 4} % Left header is empty
+\rhead{Roy Zhou \\ \today} % Right header contains date and name
+
+\geometry{margin=1in}
+\noindent 
+
+\begin{document}
+
+\section*{Ch. 4}
+
+\subsection*{Exc. 2}
+We must prove that if x is an odd integer, than $x^3$ is odd. We can start off by
+utilizing our given to write $x$, as $2n+1$, where $n \in \mathbb{Z}$. Then we can 
+cube $2n+1$, this yields $8n^3 + 12n^2 + 6n + 1$. Factoring out all factors of 2,
+we can write the expression in the form of $2(m) + 1$, where $m$ is an integer because
+it is equal to $4n^3 + 6n^2 + 3n$. In the end, we get that $x^3$ is equal to a number of 
+the form $2m+1$, with $m$ being an integer. By definition, $2m+1$ must be odd, so $x^3$ must be odd.
+
+\subsection*{Exc. 8}
+We are given the facts that $a$ is an integer, as well as the fact that $5|2a$. We can use
+these givens to write that $2a = 5b$ for $b \in \mathbb{Z}$. Further because there is a 
+2 on the side of $2a$, we know that both numbers must be even. That means that we can write 
+$b$ as $2c$, where $c \in \mathbb{Z}$. We can plug it all in to get that $2a = 5(2c)$, simplifying,
+we get $a = 5c$. Now we can plug $5c$ into the end, and because $c$ is an integer, we know that
+the statement $5|5c$ is true.
+
+\subsection*{Exc. 14}
+Any integer is either even or odd, so intuitively, we can try $n$ being even or odd to prove that
+$5n^2 + 3n + 7$ is odd. Lets assume $n$ is odd, then we can write $n = 2m+1$, where $m \in \mathbb{Z}$.
+Plugging $2m+1$ into the expression, we get: 
+$$5(2m+1)^2 + 3(2m+1) + 7$$\\
+$$20m^2 + 26m + 15$$ \\
+Now again, we can factor the equation such that $p = 10m^2 + 13m + 7$. We can then write
+the expression as $2p + 1$, with $p$ being an integer, proving that the expression is odd.
+To test the even case, we can write $n = 2m$. Now, we get: 
+$$20m^2+6m+7$$
+which can be written as $2p + 1$, where $p = 10m^2 + 3m + 3$. We have proved that both cases,
+$n$ either being even or odd, still result in the expression being odd.
+
+\subsection*{Exc. 16}
+We look at the cases of if both integers are odd, we get that $$2m+1 + 2n+1 = 2(m+n+1)$$. 
+Clearly this is even, as $m$ and $n$ are both integers, meaning that $m+n+1 \in \mathbb{Z}$.
+Furthermore, $2$ times an integer is an integer. \\
+We look at the case of if both integers are even, we get that $2m + 2n = 2(m+n)$. Using the same logic as above,
+we know that $(m+n)$ is an integer, thus the sum of two even integers is even. Thus by doing all cases,
+we have proved that if two integers with same parity sum together, we get an even integer.
+
+\subsection*{Exc. 26}
+We can prove that every odd integer is the difference of two squares constructively. First look at what happens
+at the difference of two consecutive squares(let $m$ be an integer): 
+$$(m+1)^2 - (m)^2 = (m+1 + m)(m+1-m) = (2m+1)(1)$$\\
+Coincidentally, $2m+1$ is also the form of every odd integer. This means that to get any given odd integer,
+one must split the integer into a sum of two consecutive numbers, then the difference between the squares of the two consecutive numbers
+will be the desired odd number. 
+
+\section*{Ch. 5}
+
+\subsection*{Exc. 6}
+Suppose that $x \le -1$ we want to show that it implies $x^3 - x \le 0$. We can show this by
+factoring the expression: 
+$$x(x^2-1)$$
+This seperates the problem into two different parts, since $x \le -1$, that means that the $x$ term
+by itself is always going to be negative. On the other hand, the $x^2 - 1$ term is always going to be non-negative.
+It will be 0 in the case that $x = -1$, and positive in any other case. Thus we have it that $x^3 - x$ is always either zero,
+or negative. Thus by contrapositive, we are able to prove that $x^3 - x > 0$ implies 
+$x > -1$.
+
+\subsection*{Exc. 10}
+Suppose that $x|y$ or $x|z$. WLOG let's assume that $x|y$ we can then write $y = ax$. Then,
+we can substitute $ax$ into the end expression, getting that $x|(ax)(z)$. Because there is an $x$ in the 
+numerator, we know that $x|azx$ is true. Thus we have proved the statement through contrapositive.
+
+\subsection*{Exc. 12}
+Supposse $a$ is even. We can write $a = 2b$, where $b \in \mathbb{Z}$. We can then express $a^2$
+as $4b^2$. Clearly $4|4b^2$ is true, as $b$ is an integer, and there is a 4 in the numerator.
+Thus we have proved through contrapositive that if $a^2$ is not divisible by 4, then a is odd.
+
+\subsection*{Exc. 18}
+We can expand $(a+b)^3$ into $a^3 + 3a^{2}b+3ab^2+b^3$ when we mod the expression by $3$, we are able 
+to remove any terms that are a multiple of $3$, this leads us with $a^3 + b^3$. Thus we have proved that
+$a^3 + 3a^{2}b+3ab^2+b^3 \equiv a^3 + b^3$ mod 3.
+
+\subsection*{Exc. 24}
+We can write $a \equiv b \pmod{n}$ as $a = b + xn$ and $c \equiv d \pmod{n}$ as $c = d + yn$, where $x,y \in \mathbb{Z}$.
+We can then multiply the two equations together, yielding:
+$$ac = bd + byn + dxn + xyn^2$$ \\
+Modding by n, we get that:
+$$ac \equiv bd \pmod{n}$$
+This happens as all terms with n are effectively cancelled out. Now, we have proved that if
+$a \equiv b \pmod{n}$ and $c \equiv d \pmod{n}$ implies that $ac \equiv bd \pmod{n}$.
+
+\section*{Ch. 6}
+
+\subsection*{Exc. 6}
+Proof by contradiction. Suppose that $a, b \in \mathbb{Z}$, then we want to see if $a^2-4b-2 = 0$.
+To prove that this is impossible, we can first rearrange to: 
+$$a^2 = 4b+2$$\\
+From here, we know that since the right side has a factor of 2, that $a$ must be even. In other words,
+$a = 2c$ for $c$ is an integer. We can plug in to get $4c^2 = 4b + 2$. However, now we have a contradiction,
+as the right side must be divisible by 4. We get $c^2 = b + \frac{2}{4}$. Rearranging again, we get that 
+$$c^2 - b = \frac{2}{4}$$ \\
+This is clearly a contradiction, as the difference between two integers cannot be a fraction, thus 
+we know that the if $a, b \in \mathbb{Z}$, then $a^2 -4b -0 \ne 0$.
+\end{document}
+
+

@@ -1,0 +1,147 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt}
+
+\pagestyle{fancy}
+
+\setlength{\headheight}{35pt} 
+\lhead{Math 8 \\ Homework 5} % Left header is empty
+\rhead{Roy Zhou \\ \today} % Right header contains date and name
+
+\geometry{margin=1in} 
+
+\begin{document}
+
+\noindent
+\textbf{Chapter 6}\\
+
+
+\noindent
+\textbf{Problem 18:}\\
+
+Going by contradiction, we assume that $4|a^2 + b^2$ and we assume that both of $a, b$ are odd. WLOG lets say $a$. 
+we end up representing $a = 2n+1$, and $b = 2m+1$ where $n, m \in \mathbb{Z}$. We turn: \\
+$$a^2 + b^2 = (2n+1)^2 + (2m+1)^2$$
+$$= 4n^2+4n+1 + 4m^2+4m+1$$
+$$= 4(n^2 + n + m^2 + m) + 2$$
+As we see our expression $4(n^2 + n + m^2 + m) + 2 \equiv 2 \pmod 4$, thus we get a contradiction.\\
+
+\noindent 
+\textbf{Chapter 7}\\
+
+\noindent
+\textbf{Problem 22:}\\
+
+We can prove this problem through direct proof. Consider the two cases, one in which $n$ is even and one in which n is odd.
+In the case in which $n$ is even, we can write $n = 2m$, $m \in \mathbb{Z}$. We see that: 
+$$n^2 = 4m^2$$
+Which is divisible by 4.
+In the case where $n$ is odd we can write $n = 2m+1$, $m \in \mathbb{Z}$. We see that:
+$$n^2 - 1 = 4m^2 + 4m = 4(m^2 + m)$$
+Again, this is divisible by 4. In both cases, either $n^2-1$ or $n^2$ is divisible by 4, thus we know the statement is true.
+
+\noindent 
+\textbf{Problem 24: }\\
+
+To solve this problem we just go by cases, assume $a$ is even we get $a = 2m$ and then 
+$$a^2-3 = 4m^2 -3$$
+This clearly is a contradiction, as $4m-3 \equiv 1 \pmod 4$.
+On the other hand, if $a$ is odd, we get $a = 2m+1$. Again we see:
+$$a^2-3 = 4m^2 + 4m - 2$$
+This is yet another contradiction, as $4(m^2 + m) - 2 \equiv 2 \pmod 4$. Thus we get that if 
+$a \cin \mathbb{Z}$, then $4 \nmid (a^2-3)$.
+
+\noindent 
+\textbf{Chapter 8}\\
+
+\noindent
+\textbf{Problem 22:}\\
+
+We can prove the problem in the first direction $A \subseteq B \Rightarrow A \cap B = A$
+From our given, we get that $\forall x: x \in A \Rightarrow x \in B$ because $x \in B$.
+Now we need to prove both that $A \cap B \subseteq A$ and $A \subseteq A \cap B$.
+We can do the first by stating the definition of intersection. An intersection by definition
+can only be less than or equal to the sets that comprise it. Thus it has to be less than or equal to $A$.
+For the second one, we can use our first thing, where $\forall x: x \in A, B$. Which means that 
+$x \in A \cap B$. Now we have proved the first direction.
+To prove the second direction we do the thing from the opposite direction. Assuming
+$A \subseteq B \Leftarrow A \cap B = A$ 
+To prove this we need to use our assumption that $A \cap B = A$. $\forall x \in A : x \in B$.
+For our proof, this directly translates to our conclusion, which is that $\forall x \in A : x \in B$.
+Thus for all $x \in A$ we get that $x \in A \cap B$.\\
+
+\noindent
+\textbf{Problem 28:}\\
+
+We can do this problem inductively. Given the base case $a, b = 0$ we get that $12a + 25b = 0$.
+We can go up by 1 from every integer by decreasing $a$ by 2 and increasing
+$b$ by 1. We can go down by 1 by doing the opposite, increasing $a$ by 2 and decreasing $b$ by 1. 
+Now, we have a base case, $12a + 25b = 0$ and we have an inductive step to reach every integer. Thus we are done,
+we have proved that $\{12a+25b:a,b\in\mathbb{Z}\}$.
+
+\noindent 
+\textbf{Chapter 9}\\
+
+
+
+\noindent
+\textbf{Problem 10:}\\
+The statement given is true, as by definition, subtraction of sets $A-B$ means 
+all elements in $A$ that are not in $B$. Because $A \cap B = \emptyset$. This means that $A-B = A$.
+So essentially we are getting $\mathcal{P}(A) - \mathcal{P}(B) \subseteq \mathcal{P}(A)$.
+This is obviously true, as $\mathcal{P}(B)$ and $\mathcal(P){A}$ only have $\emptyset$ in common.
+As a result the result of $\mathcal{P}(A) - \mathcal{P}(B) = \mathcal{P}(A)-\emptyset$. 
+This still means, however, that every element of $S = \mathcal{P}(A) - \emptyset$ is inside $\mathcal{P}(A)$.
+Thus the statement is true.
+
+\noindent
+\textbf{Problem 12:}\\
+This problem is obviously not true, we can bring a counter example of $\{a,b,c\} = \{1, 2, 2\}$. 
+We get that $\{ab, bc, ac\} = \{2, 4, 2\}$. They are all the same parity, yet $a$ is odd, while $b, c$ are even, so we have a contradiction.\\
+
+\noindent
+\textbf{Problem 16:}\\
+This is not true again, as we can have $A = \{1, 2, 3, 4, 5 \}$ and $B = \{5, 6, 7, 8\}$.
+The sum of the sizes of $|A| + |B| = 9$. But the set $A \cup B = {1, 2, 3, 4, 5, 6, 7, 8}$
+and thus $|A \cup B| = 8$. We have a contradiction, so false.
+
+\noindent
+\textbf{Problem 22:}\\
+This is true, given $p, q$ with $p < q$. This means that $2 \ge q$. Which means that $q$ is always going to be an odd number.
+Now we can label $q = 2n+1$. We thus know that $q^2$ is also an odd number, as an odd number squared is odd. Thus we know that $2p + q^2$ is odd
+as it represents an even number adding with an odd number, something that creates an odd.
+
+\noindent 
+\textbf{Chapter 10}\\
+
+\noindent
+\textbf{Problem 2:}\\
+We first start off with the base case. Given $n = 1$, we get that $\frac{1(1+1)(3)}{6} = 1^2$. So we do have a base case.
+Now for our inductive step. Given that $$\frac{n(n+1)(2n+1)}{6} = 1^2 + 2^2 + \cdots + n^2$$,
+we can write:
+$$\frac{n(n+1)(2n+1)}{6} + (n+1)^2$$
+$$= \frac{n(n+1)(2n+1)}{6} + n^2+2n+1$$
+$$= \frac{n(n+1)(2n+1)+6n^2+12n+6}{6}$$
+$$= \frac{(n+1)(n+2)(2(n+1)+1)}{6}$$
+Thus we have proved the inductive step to be true. Our proof is done, as we have extablished both 
+the base case as well as the inductive step.
+
+\noindent
+\textbf{Problem 6:}\\
+We first start off with the base case. Given $n = 1$, we get
+$$(8-5) = 4(1)^2-(1)$$
+$$3 = 3$$
+Now assume that $\sum^{n}_{i = 1}(8i-5) = 4n^2 - n$. If we were to have $n \rightarrow n-1$ it would look like:
+$$\sum^{n}_{i = 1}(8i-5) = 4n^2 - n + (4n + 3)$$
+Doing some arithmetic, we get
+$= 4n^2 +4n + 4 - (n+1) = 4(n+1)^2 - (n+1)$
+Thus we have proved our inductive step and our proof is done.
+
+\end{document}
+

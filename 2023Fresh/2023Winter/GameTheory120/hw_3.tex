@@ -1,0 +1,73 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt}
+
+\pagestyle{fancy}
+
+\setlength{\headheight}{35pt} 
+\lhead{Game Theory 120 \\ Homework 3} % Left header is empty
+\rhead{Roy Zhou \\ \today} % Right header contains date and name
+
+\geometry{margin=1in} 
+
+\begin{document}
+
+(I haven't yet figured out how to paste images in latex well, so I'll just use a notation
+"\textbf{ABCDE}" where every letter is attached to the letter to its left, the leftmost is attatched to the ground)\\
+
+\noindent
+\textbf{Problem 1:}\\
+
+Assuming that left is red, and right is blue, we get: 
+$$\gamma = \{\textbf{BR}, \bullet \textbf{0} | \textbf{R}\}$$
+$$\textbf{BR} = \{\bullet \textbf{0} | \textbf{R}\}$$
+$$\textbf{R} = \bullet 1$$
+
+We get that $\textbf{BR} = \bullet \frac{1}{2}$, thus by rules we get $\gamma = 3/4$. \\
+
+\noindent 
+\textbf{Problem 2: }\\
+
+Again, using our previous notation where $\bullet \textbf{R} = \bullet 1$,
+$\bullet \textbf{B} = \bullet{-1}$, we get that
+$$\bullet \textbf{R} = \bullet 1$$
+$$\bullet \textbf{BR} = \bullet 1/2$$
+$$\bullet \textbf{RBR} = \bullet 3/4$$
+$$\bullet \textbf{BRBR} = \{\bullet \textbf{BR}, \bullet 0 | \bullet \textbf{RBR}, 
+\bullet \textbf{R}\} = \{\frac{1}{2}, 0 | \frac{3}{4} , 1\} = \bullet \frac{5}{8}$$
+$$\bullet \textbf{RBRBR} = \{\textbf{BRBR}, \textbf{BR}, 0 | \textbf{RBR}, \textbf{R}\} 
+= \{\frac{5}{8}, \frac{1}{2}, 0 | \frac{3}{4}, 1\} = \bullet \frac{11}{16}$$
+
+Essentially, we get that for every two $RB$:
+
+$$\bullet \textbf{R} = \bullet 1$$
+$$\bullet \textbf{RBR} = \bullet \frac{3}{4}$$
+$$\bullet \textbf{RBRBR} = \bullet \frac{11}{16}$$
+$$\bullet \textbf{RBRBRBR} = \bullet \frac{43}{64}$$
+
+We subtract in order: $\frac{1}{4}, \frac{1}{16}, \frac{1}{64}, \cdots, \frac{1}{4^n}$. 
+As a generalization, we get that for odd $S$, where
+$S = 2m + 1$. We get $S = 1 - \Sigma^{m}_{i = 1} \frac{1}{4}^{i}$. 
+For even $S$, we can write $S = 2n$. We can write this as $S = (2(n-1) + 1) + 1$. 
+We can plug $(n-1) = m$ into our odd $S$ expression, then subtract $(\frac{1}{2})(\frac{1}{4})^{n-1}$
+
+\noindent
+\textbf{Problem 3: }
+
+Our \textbf{RRL} game of push can end up in a few states. Assuming Richard is on the left, we get: 
+$$\textbf{RRL} = \{\textbf{RL\_}, \textbf{\_RL} | \textbf{RL\_} \}$$
+$$\textbf{RL\_} = \{\textbf{\_L\_} | \textbf{L\_\_}\}$$
+$$\textbf{\_RL} = \{\textbf{R\_L} | \textbf{RL\_}\}$$
+$$\textbf{R\_L} = \{\textbf{\_\_L} | \textbf{RL\_}\}$$
+What we realize is that no matter what we do, 
+in the position $\textbf{RRL}$ Richard will always lose in 3 to 4 moves. 
+An equivalent hackenbush game would then be \textbf{B R RB}, with each three being seperate towers. This hackenbush position has a dyadic number of 
+$\frac{1}{2}$, thus our answer is $\frac{1}{2}$.
+\end{document}
+

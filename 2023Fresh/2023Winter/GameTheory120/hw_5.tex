@@ -1,0 +1,215 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancy}
+\geometry{margin=1in} 
+\setlength{\headheight}{35pt} 
+
+\lhead{Game Theory 120 \\ Homework 5} % Left header is empty
+\rhead{Roy Zhou \\ \today} % Right header contains date and name
+
+\begin{document}
+\noindent
+\textbf{Problem 1:}\\
+We first make a tree. We start off with 9 branches, each with representing a unique
+set of draws. Then for each branch, we have two other branches of Colins's options of folding
+or calling. Then in the calling branch we have two other branches of rose folding or calling.
+An example would be something like Colin has Jack, and Rose has Queen. If colin folds, the payoffs 
+are (-1, 1), if he calls, we go to Rose's options, if she calls it's (-3, 3), otherwise if she
+folds it's (1, -1). The whole tree is a bit tough to draw on latex, so I don't really have a good way to include it.
+After that, we can split the matrix into a total of 8 strategies of calling: Always, JQ, QK, JK, Q, K, J. Writing this down in a matrix, we get 
+\[
+\begin{array}{c|cccccccc}
+ & A & QJ & KQ & KJ & J & Q & K & N \\
+\hline
+A & 0 & 1 & \frac{-1}{3} & \frac{1}{3} & \frac{4}{3} & \frac{2}{3} & 0 & 1 \\
+QJ & -1 	& \frac{1}{9} &\frac{-8}{9} &\frac{-2}{9} &\frac{8}{9} &\frac{2}{9} &\frac{-1}{9} & 1\\
+KQ & \frac{1}{3} & \frac{10}{9}& \frac{1}{9}& \frac{4}{9}& \frac{11}{9}& \frac{8}{9}& \frac{2}{9}&1 \\
+KJ & \frac{-1}{3}& \frac{4}{9}& \frac{-2}{9}& \frac{1}{9}& \frac{8}{9}& \frac{5}{9}& \frac{2}{9}&1 \\
+J & \frac{-4}{3}& \frac{-4}{9}& \frac{-7}{9}& \frac{-4}{9}& \frac{4}{9}& \frac{1}{9}& \frac{1}{9}&1 \\
+Q & \frac{-2}{3}& \frac{2}{9}& \frac{-4}{9}& \frac{-1}{9}& \frac{7}{9}& \frac{4}{9}& \frac{1}{9}&1 \\
+K & 0 & \frac{5}{9}& \frac{2}{9}& \frac{2}{9}& \frac{7}{9}& \frac{7}{9}& \frac{4}{9}&1 \\
+N & -1 & \frac{-1}{3}& \frac{-1}{3}& \frac{-1}{3}& \frac{1}{3}& \frac{1}{3}& \frac{1}{3}&1 \\
+\end{array}
+\]
+We are able to reduce until we get 
+\[
+\begin{array}{c|cc}
+      & A & KQ \\
+\hline
+    KQ & \frac{1}{3} & \frac{1}{9} \\
+    K & 0 & \frac{2}{9} \\
+\end{array}
+\]
+From here we can just do the trick to find the vectors for colin and rose.
+
+\begin{align}
+	|\frac{1}{3} - \frac{1}{9}| = \frac{2}{9}\\
+	|0 - \frac{2}{9}| = \frac{2}{9}\\
+\end{align}
+We get that Rose plays KQ, and K at half half percentages. In other words, Rose would 
+always call with K, and half chance to call with Q. For colin, we get:
+\begin{align}
+	|\frac{1}{3} - 0| = \frac{1}{3}\\
+	|\frac{1}{9} - \frac{2}{9}| = \frac{1}{9}  
+\end{align}
+We swap, then get that colin plays All $\frac{1}{4}$ of the time, and KQ at $\frac{3}{4}$ of the time. 
+Again, that means that colin always calls with Q or K, and calls with J a fourth of the time.
+This all leads to an expected payoff of $\frac{1}{6}$ for Rose(aka, the second player).\\
+\noindent
+\textbf{Problem 2: } \\
+\textbf{a)} \\
+If $y \le 2$ we can eliminate the second row and then the game beccomes a matter of 
+whether  $x > 0$. If it is, the game will end up on  $(4,x)$ otherwise, it will be $(2,0)$.
+If $x \le 0$ We can eliminate the first column and then the game becomes whether $y > 2$. If it is,
+we land on the second row, otherwise, the first. Thus the only ambiguous game is when
+$x > 0, y > 2$. In this scenario, we do the trick, getting:
+\begin{align}
+	|x-0| = x \\
+	|2-3| = 1 \\
+	\begin{bmatrix}
+		\frac{1}{x+1} &
+		\frac{x}{x+1}
+	\end{bmatrix}\\
+	|4-1| = 3 \\
+	|2 - y| = y-2 \\
+	\begin{bmatrix}
+		\frac{y-2}{y+1}\\
+		\frac{3}{y+1}
+	\end{bmatrix}
+\end{align}\\
+
+\textbf{b) }\\
+If $y \ge 5$, we eliminate the first row, then we eliminate the first column, since $0 < 1$.
+If $y \l 5$, then it comes down to whether $x \le -1$ if it is, we eliminate the first column
+, then eliminate the first row because  $-1 < 1$. Thus the only ambigious gamestate is when
+ $x > -1, y < 5$. We do the trick to get: 
+\begin{align}
+ |x-(-1)| = x+1 \\
+ |0 - 1| = -1 \\
+ \begin{bmatrix}
+	 \frac{1}{x+2} & 
+	 \frac{x+1}{x+2}
+ \end{bmatrix}\\
+ |5-y| = 5-y \\
+ |1-3| = 2 \\
+ \begin{bmatrix}
+ 	\frac{2}{7-y}\\
+ 	\frac{5-y}{7-y}
+ \end{bmatrix}
+\end{align}\\
+
+\textbf{c) } \\
+If $y \le 3$, we eliminate the first column. It then becomes a question of if $z \le 1$. If it is, we choose the first row,
+otherwise the second. We now split it up into 3 cases, where $x > 0, x = 0, x < 0$:\\
+
+\noindent
+\textbf{$x > 0, y > 3, z > 1$}\\
+Using the trick, we get: 
+\[
+\begin{bmatrix}
+	\frac{6}{y+3} & \frac{y-3}{y+3}
+\end{bmatrix}
+\begin{bmatrix}
+	\frac{z-1}{z+x-1} \\
+	\frac{x}{z+x-1}
+\end{bmatrix}
+\] \\
+\textbf{$x > 0, y > 3, z = 1$} \\
+Remove second row, we land on $(x,y)$\\
+\textbf{$x > 0, y > 3, z < 1$} \\
+Remove second row, we land on $(x,y)$\\
+\textbf{$x = 0, y > 3, z > 1$} \\
+Remove first row, we land on $(z,6)$ \\
+\textbf{$x = 0, y > 3, z = 1$} \\
+Using the trick we get:
+\[
+\begin{bmatrix}
+	\frac{6}{y+3} & \frac{y-3}{y+3}
+\end{bmatrix}
+.\] It doesn't matter what Rose chooses, as her payoffs are identical.\\
+\textbf{$x = 0, y > 3, z < 1$} \\
+Remove second row, we land on $(x,y)$ \\
+\textbf{$x < 0, y > 3, z > 1$} \\
+Remove first row, we land on $(z,6)$ \\
+\textbf{$x < 0, y > 3, z = 1$} \\
+Remove first row, we land on $(z,6)$ \\
+\textbf{$x < 0, y > 3, z < 1$} \\
+Using the trick, we get: 
+\[
+\begin{bmatrix}
+	\frac{6}{y+3} & \frac{y-3}{y+3}
+\end{bmatrix}
+\begin{bmatrix}
+	\frac{1-z}{z+x-1} \\
+	\frac{-x}{z+x-1}
+\end{bmatrix}
+
+.\] 
+ \noindent
+\textbf{Problem 3: }\\
+If $p^{T} \equiv Rq$, and there are no pure nash equilibria, then we can assume that the 
+row of all 1's is in the rowspace of C,
+and the column of all 1's is in the columnspace of R. Thus we can take an example of (R,C), 
+such as:
+\[
+\begin{bmatrix}
+	(-1, 2) & (3, 3) & (2, 5)
+	(5, 3) & (2, 7) & (4, 3)
+\end{bmatrix}
+.\]
+After drawing the arrows, we realize this isn't a pure nash equilibrium. Now we get that
+$C^{T}p = p^{T}C = [1, 1, 1]^{T}$ must be true. However, after bringing the augmented
+matrix to reduced row echelon form, we get:
+\[
+\begin{bmatrix}
+	1 & 0 & |-\frac{4}{5} \\
+	0 & 1 & |-\frac{1}{5} \\
+	0 & 0 & |-\frac{12}{5}
+\end{bmatrix}
+.\] This makes it so that there is not p such that $p^{T}C = [1, 1, 1]^{T}$ is true. Thus
+this is a counterexample, as the row of all 1's isn't in the rowspace, meaning they are not all
+equal.
+
+\noindent
+ \textbf{Problem 4: } \\
+Just to simplify the matrix, we can just say that the batting team gets a run when
+the batter hits, while the other team prevents a run. Then we can see it as a 
+zero-sum game. 
+We get this matrix: \\
+\[
+\begin{bmatrix}
+	0.255 & 0.275 \\
+	0.275 & 0.265 \\
+\end{bmatrix} \\
+\]
+\noindent
+Now we can quickly find the percentage by doing
+\begin{align}
+	|0.255-0.275| = 0.02 \\
+	|0.275-0.265| = 0.01
+\end{align}
+We then swap their positions and get that the batting team has a matrix of
+$\begin{bmatrix}
+	\frac{1}{3} \\
+	\frac{2}{3}
+\end{bmatrix}.$
+On the other hand, for the pitches, we do the same, but for columns: 
+\begin{align}
+	|0.255-0.275| = 0.02 \\
+	|0.275-0.265| = 0.01
+\end{align}
+We swap, then get a matrix of $
+\begin{bmatrix}
+	\frac{1}{3} & \frac{2}{3}
+\end{bmatrix}.$
+So we get that both teams want a third of their players lefty and a two-thirds righty.
+This matches somewhat with reality, as in 2019 $\frac{2}{3}$ of the pitchers were right handed.
+
+\end{document}
